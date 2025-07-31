@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <map>
+
 #include "pico/stdlib.h"
 #include "hardware/spi.h"
 #include "hardware/i2c.h"
@@ -9,6 +11,20 @@
 #define PIN_CS   17
 #define PIN_SCK  18
 #define PIN_MOSI 19
+
+class ColorEffect {
+    public:
+        map<uint8_t[], uint16_t> effects;
+};
+
+class Camera {
+    public:
+        uint16_t sensor_reset;
+};
+
+void startup(Camera cam) {
+    return;
+}
 
 int main() {
     stdio_init_all();
